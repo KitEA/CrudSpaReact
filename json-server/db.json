@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "first_name": "Migeswt",
+      "last_name": "Schwartz",
+      "email": "rob23@gmail.com",
+      "id": 1
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "annasmith23@gmail.com"
+    },
+    {
+      "id": "5",
+      "first_name": "Roger",
+      "last_name": "Bacon",
+      "email": "rogerbacon12@yahoo.com"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./components/Home";
 import Users from "./components/Users";
 import AddNewUser from "./components/AddNewUser";
+import UpdateUserData from "./components/UpdateUserData";
 
 class Main extends Component {
     render() {
@@ -34,6 +35,7 @@ class Main extends Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/users" component={Users}/>
                         <Route path="/addNewUser" component={AddNewUser}/>
+                        <Route path='/edit/:id' component= {UpdateUserData} />
                     </div>
                 </div>
             </HashRouter>
