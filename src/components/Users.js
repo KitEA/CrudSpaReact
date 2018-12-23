@@ -2,13 +2,28 @@ import React, { Component } from "react";
 import axios from 'axios';
 import TableRow from './TableRow';
  
+const API = 'http://localhost:4000/users';
+
 class Users extends Component {
   constructor(props){
     super(props);
-    this.state = {users: []};
+    this.getDataFromServer = this.getDataFromServer.bind(this);
+    this.state = {
+      users: [],
+      intervalIsSet: false
+    };
   }
+
   componentDidMount(){
-    axios.get('http://localhost:4000/users')
+    this.getDataFromServer();
+    if (!this.state.intervalIsSet) {
+      let interval = setInterval(this.getDataFromServer, 1000);
+      this.setState({ intervalIsSet: interval});
+    }
+  }
+
+  getDataFromServer = () => {
+    axios.get(API)
       .then(response => {
         this.setState({ users: response.data })
       })
@@ -19,7 +34,7 @@ class Users extends Component {
 
   tabRow() {
     return this.state.users.map((object, i) => {
-      return <TableRow obj={object} key={i} />
+      return <TableRow obj={object} key={i} updateTable={this.updateTable} />
     })
   }
 
