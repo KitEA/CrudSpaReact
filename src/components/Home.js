@@ -4,15 +4,14 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h2>HELLO</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
- 
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+        <h2>Users databank</h2>
+        <p>Here you can redact base of users, perform Crud operations on them
+          to add user click Add New User link 
+          to delete click Users and delete button next to user you want to delete
+          to edit do the same as delete but click edit instead
+          also you can just look at users data at Users panel 
+        </p>
+      
       </div>
     );
   }

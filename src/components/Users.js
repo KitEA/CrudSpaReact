@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import TableRow from './TableRow';
  
-class Stuff extends Component {
+class Users extends Component {
   constructor(props){
     super(props);
     this.state = {users: []};
@@ -26,7 +26,7 @@ class Stuff extends Component {
   render() {
     return (
       <div>
-        <h2 align="center">Stuff</h2>
+        <h2 align="center">Users</h2>
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>
             <tr>
@@ -45,4 +45,4 @@ class Stuff extends Component {
   }
 }
  
-export default Stuff;
+export default Users;
