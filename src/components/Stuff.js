@@ -1,19 +1,45 @@
 import React, { Component } from "react";
+import axios from 'axios';
+import TableRow from './TableRow';
  
 class Stuff extends Component {
+  constructor(props){
+    super(props);
+    this.state = {users: []};
+  }
+  componentDidMount(){
+    axios.get('http://localhost:4000/users')
+      .then(response => {
+        this.setState({ users: response.data })
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  tabRow() {
+    return this.state.users.map((object, i) => {
+      return <TableRow obj={object} key={i} />
+    })
+  }
+
   render() {
     return (
       <div>
-        <h2>STUFF</h2>
-        <p>Mauris sem velit, vehicula eget sodales vitae,
-        rhoncus eget sapien:</p>
-        <ol>
-          <li>Nulla pulvinar diam</li>
-          <li>Facilisis bibendum</li>
-          <li>Vestibulum vulputate</li>
-          <li>Eget erat</li>
-          <li>Id porttitor</li>
-        </ol>
+        <h2 align="center">Stuff</h2>
+        <table className="table table-striped" style={{ marginTop: 20 }}>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th colSpan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            { this.tabRow() }
+          </tbody>
+        </table>
       </div>
     );
   }
