@@ -2,7 +2,11 @@ body {
     background-color: #FFCC00;
 }
 
-h1, h2, p, ul, li {
+label {
+    margin: 10px;
+}
+
+h1, h2, h3, h4, p, ul, li {
     font-family: sans-serif;
 }
 
@@ -13,4 +17,8 @@ h1, h2, p, ul, li {
 
 .active {
     background-color: #0099FF;
+}
+
+.btn {
+    margin: 10px;
 }

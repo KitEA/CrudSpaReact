@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
  
 class AddNewUser extends Component {
   constructor(props) {
@@ -57,19 +58,19 @@ class AddNewUser extends Component {
             <label>First Name: </label>
             <input type="text" className="form-control"
             value={this.state.first_name}
-            onChange={this.onChangeFirstName} />
+            onChange={this.onChangeFirstName} required />
           </div>
           <div className="form-group">
             <label>Last Name: </label>
             <input type="text" className="form-control"
             value={this.state.last_name}
-            onChange={this.onChangeLastName} />
+            onChange={this.onChangeLastName} required />
           </div>
           <div className="form-group">
             <label>Email: </label>
             <input type="text" className="form-control"
             value={this.state.email}
-            onChange={this.onChangeEmail} />
+            onChange={this.onChangeEmail} required />
           </div>
           <div className="form-group">
             <input type="submit" value="Register User" className="btn btn-primary" />
